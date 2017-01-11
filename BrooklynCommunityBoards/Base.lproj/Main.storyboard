@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4Ti-Fr-YCx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sVK-KO-6MS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,50 +9,70 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
-        <scene sceneID="5Mq-Bj-BFw">
+        <!--Inital View Controller-->
+        <scene sceneID="PMk-sj-9Eh">
             <objects>
-                <tableViewController id="oQz-hm-Avp" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pJ9-oF-9N1">
+                <viewController id="sVK-KO-6MS" customClass="InitalViewController" customModule="BrooklynCommunityBoards" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="twl-Ma-ARg"/>
+                        <viewControllerLayoutGuide type="bottom" id="8TI-rI-8T2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="byR-Ai-uHe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brooklynTwo" translatesAutoresizingMaskIntoConstraints="NO" id="AIS-xx-2HZ">
+                                <rect key="frame" x="-0.5" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brooklyn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ie8-EE-W99">
+                                <rect key="frame" x="119.5" y="577" width="135.5" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="jAg-ce-GPn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="37"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTa-3c-Usp">
+                                <rect key="frame" x="151.5" y="72" width="72.5" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="kv3-Nl-NID"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="37"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esU-w6-zQE">
+                                <rect key="frame" x="8" y="335" width="351" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="30"/>
+                                <state key="normal" title="Community Board Listings"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="SE6-zU-ezD">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SE6-zU-ezD" id="yps-aj-1EE">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="oQz-hm-Avp" id="BHm-j4-DUa"/>
-                            <outlet property="delegate" destination="oQz-hm-Avp" id="F4U-kJ-s9g"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="7Ro-AC-Iqc"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="42Y-uT-Ts3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-401" y="12"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="8fE-mB-h11">
-            <objects>
-                <navigationController id="4Ti-Fr-YCx" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cEC-is-hy1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
+                        <constraints>
+                            <constraint firstItem="gTa-3c-Usp" firstAttribute="centerX" secondItem="AIS-xx-2HZ" secondAttribute="centerX" id="D9T-6Z-P2y"/>
+                            <constraint firstItem="AIS-xx-2HZ" firstAttribute="height" secondItem="byR-Ai-uHe" secondAttribute="height" id="H92-rt-b2c"/>
+                            <constraint firstItem="gTa-3c-Usp" firstAttribute="bottom" secondItem="AIS-xx-2HZ" secondAttribute="bottom" constant="-557" id="JI3-RF-VuY"/>
+                            <constraint firstItem="AIS-xx-2HZ" firstAttribute="width" secondItem="byR-Ai-uHe" secondAttribute="width" id="Nbd-a3-pU2"/>
+                            <constraint firstItem="ie8-EE-W99" firstAttribute="bottom" secondItem="AIS-xx-2HZ" secondAttribute="bottom" constant="-34" id="WkB-kO-DF7"/>
+                            <constraint firstItem="ie8-EE-W99" firstAttribute="centerX" secondItem="AIS-xx-2HZ" secondAttribute="centerX" id="agC-tx-Dze"/>
+                            <constraint firstItem="gTa-3c-Usp" firstAttribute="bottom" secondItem="AIS-xx-2HZ" secondAttribute="bottom" constant="-557" id="gqh-bV-hm9"/>
+                            <constraint firstItem="AIS-xx-2HZ" firstAttribute="centerX" secondItem="byR-Ai-uHe" secondAttribute="centerX" id="x01-am-Ghe"/>
+                            <constraint firstItem="AIS-xx-2HZ" firstAttribute="centerY" secondItem="byR-Ai-uHe" secondAttribute="centerY" id="zMW-YT-H4L"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="eLQ-8G-i1z"/>
                     <connections>
-                        <segue destination="oQz-hm-Avp" kind="relationship" relationship="rootViewController" id="dke-3K-u2k"/>
+                        <outlet property="backgroundImageView" destination="AIS-xx-2HZ" id="eWt-P4-hsS"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="q3Y-ln-9wY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ee-O8-cWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1353" y="12"/>
+            <point key="canvasLocation" x="52" y="-77.811094452773617"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="brooklynTwo" width="320" height="568"/>
+    </resources>
 </document>
