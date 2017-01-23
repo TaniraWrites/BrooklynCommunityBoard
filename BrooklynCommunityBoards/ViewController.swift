@@ -8,10 +8,11 @@
 
 import UIKit
 
-class InitalViewController: UIViewController {
+class LoginViewController: UIViewController {
 
-    @IBOutlet weak var backgroundImageView: UIImageView!
-    
+    @IBOutlet weak var loginBackgroundImage: UIImageView!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,9 @@ class InitalViewController: UIViewController {
     }
     
    
+    
+    
+    
     
 
 
