@@ -27,6 +27,12 @@ class RegisterViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func registerButton(_ sender: Any) {
+    }
+    
+    @IBAction func signInButton(_ sender: Any) {
+    }
+    
   
     
 

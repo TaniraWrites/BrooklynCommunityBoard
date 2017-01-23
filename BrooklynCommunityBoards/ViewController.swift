@@ -20,7 +20,13 @@ class LoginViewController: UIViewController {
     }
     
    
+    @IBAction func loginButton(_ sender: Any) {
+    }
     
+    @IBAction func registerButton(_ sender: Any) {
+        
+        
+    }
     
     
     
