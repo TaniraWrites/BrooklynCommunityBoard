@@ -28,9 +28,11 @@ class RegisterViewController: UIViewController {
     }
 
     @IBAction func registerButton(_ sender: Any) {
+        
     }
     
     @IBAction func signInButton(_ sender: Any) {
+        performSegue(withIdentifier: "userHasAnAccount", sender: self)
     }
     
   

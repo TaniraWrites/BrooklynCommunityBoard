@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="W4F-vq-dWd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -41,12 +41,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KUw-U9-XiC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="454" y="-49"/>
+            <point key="canvasLocation" x="14" y="-758"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="y8f-ZZ-4Bt">
             <objects>
-                <viewController storyboardIdentifier="login-view-controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9bv-5T-CtK" customClass="LoginViewController" customModule="BrooklynCommunityBoards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login-view-controller" id="9bv-5T-CtK" customClass="LoginViewController" customModule="BrooklynCommunityBoards" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4GZ-zT-9PN"/>
                         <viewControllerLayoutGuide type="bottom" id="HVb-RM-lll"/>
@@ -57,9 +57,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brooklynOne" translatesAutoresizingMaskIntoConstraints="NO" id="wv0-Ug-Opw">
                                 <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="hGV-Ie-p0W"/>
-                                </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u6e-nj-phQ">
                                 <rect key="frame" x="62" y="318" width="250" height="30"/>
@@ -68,7 +65,10 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="emailField:" destination="9bv-5T-CtK" eventType="editingDidEnd" id="Luc-Af-GJQ"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5IP-yY-Ekz">
                                 <rect key="frame" x="62" y="348" width="250" height="30"/>
@@ -77,7 +77,10 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="passwordText:" destination="9bv-5T-CtK" eventType="editingDidEnd" id="0C3-vM-hWi"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTs-uc-cXX">
                                 <rect key="frame" x="149.5" y="378" width="75" height="54"/>
@@ -86,23 +89,25 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginButton:" destination="9bv-5T-CtK" eventType="touchUpInside" id="O5J-VN-LX0"/>
+                                    <segue destination="LU4-ZO-Vjv" kind="showDetail" identifier="userCreated" id="SQr-ho-Tpq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyh-Hp-agZ">
-                                <rect key="frame" x="74.5" y="418" width="225" height="54"/>
+                                <rect key="frame" x="-0.5" y="438" width="375" height="54"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="26"/>
                                 <state key="normal" title="Register User">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="registerButton:" destination="9bv-5T-CtK" eventType="touchUpInside" id="Fcu-wa-r1s"/>
+                                    <segue destination="uAP-tL-BQ5" kind="showDetail" identifier="userMustRegister" id="jW0-iA-TY3"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5IP-yY-Ekz" firstAttribute="centerY" secondItem="u6e-nj-phQ" secondAttribute="centerY" constant="30" id="0ND-fA-u62"/>
+                            <constraint firstItem="Dyh-Hp-agZ" firstAttribute="width" secondItem="wv0-Ug-Opw" secondAttribute="width" id="1Un-eG-lcp"/>
                             <constraint firstItem="u6e-nj-phQ" firstAttribute="centerY" secondItem="wv0-Ug-Opw" secondAttribute="centerY" id="21n-C1-iK3"/>
                             <constraint firstItem="Dyh-Hp-agZ" firstAttribute="height" secondItem="mTs-uc-cXX" secondAttribute="height" id="3DP-iE-8E6"/>
                             <constraint firstItem="5IP-yY-Ekz" firstAttribute="centerX" secondItem="u6e-nj-phQ" secondAttribute="centerX" id="7Js-dc-6rR"/>
@@ -113,10 +118,9 @@
                             <constraint firstItem="mTs-uc-cXX" firstAttribute="width" secondItem="5IP-yY-Ekz" secondAttribute="width" multiplier="0.3" id="YRu-F2-lv2"/>
                             <constraint firstItem="u6e-nj-phQ" firstAttribute="centerX" secondItem="wv0-Ug-Opw" secondAttribute="centerX" id="bYo-EW-flZ"/>
                             <constraint firstItem="wv0-Ug-Opw" firstAttribute="width" secondItem="EvU-qL-bV4" secondAttribute="width" id="fGb-Pk-Yyl"/>
-                            <constraint firstItem="Dyh-Hp-agZ" firstAttribute="centerY" secondItem="mTs-uc-cXX" secondAttribute="centerY" constant="40" id="gfK-n8-gb1"/>
+                            <constraint firstItem="Dyh-Hp-agZ" firstAttribute="centerY" secondItem="mTs-uc-cXX" secondAttribute="centerY" constant="60" id="gfK-n8-gb1"/>
                             <constraint firstItem="mTs-uc-cXX" firstAttribute="centerX" secondItem="5IP-yY-Ekz" secondAttribute="centerX" id="oFA-IU-RC2"/>
                             <constraint firstItem="wv0-Ug-Opw" firstAttribute="centerX" secondItem="EvU-qL-bV4" secondAttribute="centerX" id="sIZ-9U-kvV"/>
-                            <constraint firstItem="Dyh-Hp-agZ" firstAttribute="width" secondItem="mTs-uc-cXX" secondAttribute="width" multiplier="3" id="tDP-Ae-JfP"/>
                             <constraint firstItem="wv0-Ug-Opw" firstAttribute="centerY" secondItem="EvU-qL-bV4" secondAttribute="centerY" id="wKJ-Q7-xRZ"/>
                             <constraint firstItem="mTs-uc-cXX" firstAttribute="top" secondItem="5IP-yY-Ekz" secondAttribute="bottom" id="wQM-3X-oZW"/>
                         </constraints>
@@ -125,17 +129,50 @@
                     <connections>
                         <outlet property="emailTextField" destination="u6e-nj-phQ" id="CR0-Th-wVe"/>
                         <outlet property="loginBackgroundImage" destination="wv0-Ug-Opw" id="YEN-Jq-Nqz"/>
+                        <outlet property="loginButton" destination="mTs-uc-cXX" id="nZE-HB-OAF"/>
                         <outlet property="passwordTextField" destination="5IP-yY-Ekz" id="9ZB-Np-MWA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oWf-8n-TEN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1201" y="-842"/>
+            <point key="canvasLocation" x="1824.8" y="-757.87106446776613"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="Ry1-Fo-p56">
+            <objects>
+                <viewController storyboardIdentifier="map-view-controller" id="LU4-ZO-Vjv" customClass="MapViewController" customModule="BrooklynCommunityBoards" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8c5-oH-hOs"/>
+                        <viewControllerLayoutGuide type="bottom" id="7wT-eK-Shi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GYs-kk-k85">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1C9-gN-WGz">
+                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1C9-gN-WGz" firstAttribute="centerY" secondItem="GYs-kk-k85" secondAttribute="centerY" id="MUW-nL-8PA"/>
+                            <constraint firstItem="1C9-gN-WGz" firstAttribute="centerX" secondItem="GYs-kk-k85" secondAttribute="centerX" id="NFS-zT-M6Z"/>
+                            <constraint firstItem="1C9-gN-WGz" firstAttribute="width" secondItem="GYs-kk-k85" secondAttribute="width" id="PDZ-wu-wmW"/>
+                            <constraint firstItem="1C9-gN-WGz" firstAttribute="height" secondItem="GYs-kk-k85" secondAttribute="height" id="XZR-bS-RZn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="1C9-gN-WGz" id="vfN-by-XsM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zpi-9o-s7i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2822" y="6"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="5HP-MV-uQN">
             <objects>
-                <viewController storyboardIdentifier="register-view-controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uAP-tL-BQ5" customClass="RegisterViewController" customModule="BrooklynCommunityBoards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="register-view-controller" id="uAP-tL-BQ5" customClass="RegisterViewController" customModule="BrooklynCommunityBoards" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AMP-8c-05y"/>
                         <viewControllerLayoutGuide type="bottom" id="xm6-I5-JgT"/>
@@ -198,10 +235,11 @@
                                 </state>
                                 <connections>
                                     <action selector="signInButton:" destination="uAP-tL-BQ5" eventType="touchUpInside" id="yue-0d-0oj"/>
+                                    <segue destination="9bv-5T-CtK" kind="showDetail" identifier="userHasAnAccount" id="1Vq-0y-E2k"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5z-RP-XAu">
-                                <rect key="frame" x="127" y="451" width="120" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5z-RP-XAu">
+                                <rect key="frame" x="-205.5" y="441.5" width="785" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="85" id="Oq1-6P-j8m"/>
                                     <constraint firstAttribute="width" constant="785" id="hVk-lH-VO4"/>
@@ -219,7 +257,9 @@
                         <constraints>
                             <constraint firstItem="jVS-14-tk2" firstAttribute="width" secondItem="XPt-LR-1EK" secondAttribute="width" id="9dq-at-ALx"/>
                             <constraint firstItem="jVS-14-tk2" firstAttribute="height" secondItem="XPt-LR-1EK" secondAttribute="height" multiplier="0.5" id="BJz-sP-IOo"/>
+                            <constraint firstItem="I5z-RP-XAu" firstAttribute="centerX" secondItem="jVS-14-tk2" secondAttribute="centerX" id="Faf-Nr-Xue"/>
                             <constraint firstItem="jVS-14-tk2" firstAttribute="centerY" secondItem="XPt-LR-1EK" secondAttribute="centerY" id="eu4-op-th4"/>
+                            <constraint firstItem="I5z-RP-XAu" firstAttribute="centerY" secondItem="jVS-14-tk2" secondAttribute="centerY" multiplier="1.4" id="fL2-Xf-AhY"/>
                             <constraint firstItem="jVS-14-tk2" firstAttribute="centerX" secondItem="XPt-LR-1EK" secondAttribute="centerX" id="iH0-Yr-jih"/>
                         </constraints>
                     </view>
@@ -234,12 +274,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yvu-8V-cv8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1200.8" y="641.82908545727139"/>
+            <point key="canvasLocation" x="1686" y="211"/>
         </scene>
         <!--User Home View Controller-->
         <scene sceneID="kj4-9U-Loi">
             <objects>
-                <viewController storyboardIdentifier="user-homepage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CEo-DA-TXt" customClass="UserHomeViewController" customModule="BrooklynCommunityBoards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="user-homepage" id="CEo-DA-TXt" customClass="UserHomeViewController" customModule="BrooklynCommunityBoards" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="08m-C0-UoE"/>
                         <viewControllerLayoutGuide type="bottom" id="pc2-uj-ShX"/>
@@ -259,7 +299,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zwy-Wm-ela" id="c3v-LB-7qE">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -282,7 +322,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YB1-VV-MwO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1682" y="-49"/>
+            <point key="canvasLocation" x="3642" y="6"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tLG-Ak-Fon">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W4F-vq-dWd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rdn-2N-qyG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9bv-5T-CtK" kind="relationship" relationship="rootViewController" id="r3y-Fz-vna"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sca-Qx-B8x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="885.60000000000002" y="-757.87106446776613"/>
         </scene>
     </scenes>
     <resources>
@@ -290,4 +348,7 @@
         <image name="brooklynThree" width="320" height="568"/>
         <image name="brooklynTwo" width="320" height="568"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="1Vq-0y-E2k"/>
+    </inferredMetricsTieBreakers>
 </document>
